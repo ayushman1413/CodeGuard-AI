@@ -1,5 +1,5 @@
 {
-  "name": "devguard-ai",
+  "name": "devguard-ai-vscode",
   "displayName": "DevGuard-AI - Catch issues before they cross the line of code",
   "description": "AI-powered intelligent code review and security assistant — tracks changes, detects vulnerabilities, and suggests fixes in real time.",
   "version": "1.0.0",

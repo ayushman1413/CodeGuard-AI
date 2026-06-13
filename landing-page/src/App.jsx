@@ -102,7 +102,7 @@ function App() {
               type="button"
               onClick={() =>
                 window.open(
-                  "https://marketplace.visualstudio.com/items?itemName=.devguard-ai",
+                  "https://marketplace.visualstudio.com/items?itemName=Ayushman.devguard-ai-vscode",
                   "_blank",
                 )
               }
