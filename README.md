@@ -45,7 +45,7 @@ When AI analysis is enabled, code content may be sent to the configured SambaNov
 
 Source code and issues are available on GitHub:
 
-https://github.com/pragyesh7753/DevGuard-AI
+https://github.com/ayushman1413/DevGuard-AI
 
 ## License
 

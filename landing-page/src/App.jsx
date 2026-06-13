@@ -102,7 +102,7 @@ function App() {
               type="button"
               onClick={() =>
                 window.open(
-                  "https://marketplace.visualstudio.com/items?itemName=pragyeshKumarSeth.devguard-ai",
+                  "https://marketplace.visualstudio.com/items?itemName=.devguard-ai",
                   "_blank",
                 )
               }
@@ -257,7 +257,7 @@ function App() {
             <div className="footer-links">
               <button
                 type="button"
-                onClick={() => window.open("https://github.com/pragyesh7753/DevGuard-AI", "_blank")}
+                onClick={() => window.open("https://github.com/ayushman1413/DevGuard-AI", "_blank")}
                 style={{
                   display: "flex",
                   alignItems: "center",
