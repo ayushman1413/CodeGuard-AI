@@ -26,8 +26,8 @@ class PanelManager {
     }
 
     this._panel = vscode.window.createWebviewPanel(
-      'devguardAI',
-      'DevGuard AI',
+      'codeguardAI',
+      'Codeguard AI',
       vscode.ViewColumn.One,
       {
         enableScripts: true,
@@ -62,7 +62,7 @@ class PanelManager {
       }
     };
 
-    return vscode.window.registerWebviewViewProvider('devguard-ai.sidebarView', provider);
+    return vscode.window.registerWebviewViewProvider('codeguard-ai.sidebarView', provider);
   }
 
   /**

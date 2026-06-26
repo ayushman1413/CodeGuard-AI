@@ -17,7 +17,7 @@ class AIService {
   }
 
   _refreshConfig() {
-    const config = vscode.workspace.getConfiguration('devguardAI');
+    const config = vscode.workspace.getConfiguration('codeguardAI');
     let envApiKey = process.env.SAMBANOVA_API_KEY;
     let envModel = process.env.SAMBANOVA_MODEL;
 

@@ -126,9 +126,9 @@ export default function App() {
         <header className="h-14 flex items-center justify-between px-6 border-b border-border-base shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-6 h-6 flex items-center justify-center">
-              <img src={logoImg} alt="DevGuard AI" className="w-full h-full object-contain" />
+              <img src={logoImg} alt="Codeguard AI" className="w-full h-full object-contain" />
             </div>
-            <h1 className="text-sm font-semibold tracking-tight">DevGuard AI</h1>
+            <h1 className="text-sm font-semibold tracking-tight">Codeguard AI</h1>
             {analyzing && (
               <div className="flex items-center gap-2 px-2 py-0.5 rounded-full bg-primary/10 text-[10px] font-medium text-primary border border-primary/20">
                 <div className="w-1 h-1 rounded-full bg-primary animate-pulse" />

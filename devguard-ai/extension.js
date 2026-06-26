@@ -28,7 +28,7 @@ let isAnalyzingWorkspace = false;
  * @param {vscode.ExtensionContext} context
  */
 async function activate(context) {
-  console.log('DevGuard AI activating...');
+  console.log('Codeguard AI activating...');
 
   // Initialize services
   storage = new StorageManager(context);
@@ -48,14 +48,14 @@ async function activate(context) {
     await analyzeWorkspace('command');
   });
 
-  const config = vscode.workspace.getConfiguration('devguardAI');
+  const config = vscode.workspace.getConfiguration('codeguardAI');
   if (config.get('enableTerminalTracking', true)) {
     terminalTracker.activate();
   }
 
   // ── Commands ──
   context.subscriptions.push(
-    vscode.commands.registerCommand('devguard-ai.openPanel', () => {
+    vscode.commands.registerCommand('codeguard-ai.openPanel', () => {
       panelManager.openPanel();
       // Send initial data after a brief delay
       setTimeout(() => refreshAllData(), 500);
@@ -63,15 +63,15 @@ async function activate(context) {
   );
 
   context.subscriptions.push(
-    vscode.commands.registerCommand('devguard-ai.runAnalysis', () => {
+    vscode.commands.registerCommand('codeguard-ai.runAnalysis', () => {
       analyzeWorkspace('manual');
     })
   );
 
   context.subscriptions.push(
-    vscode.commands.registerCommand('devguard-ai.clearHistory', async () => {
+    vscode.commands.registerCommand('codeguard-ai.clearHistory', async () => {
       await storage.clearHistory();
-      vscode.window.showInformationMessage('DevGuard AI: Save history cleared.');
+      vscode.window.showInformationMessage('Codeguard AI: Save history cleared.');
       refreshAllData();
     })
   );
@@ -143,7 +143,7 @@ async function activate(context) {
   });
   if (gitDisposable) context.subscriptions.push(gitDisposable);
 
-  console.log('DevGuard AI activated successfully.');
+  console.log('Codeguard AI activated successfully.');
 }
 
 /**
@@ -333,7 +333,7 @@ async function handleIssueAction(issue, action) {
           if (fix && fix.suggestion) {
             // Show the suggestion as a diff
             vscode.window.showInformationMessage(
-              `DevGuard AI Fix: ${fix.explanation}`,
+              `Codeguard AI Fix: ${fix.explanation}`,
               'Apply', 'Dismiss'
             ).then(choice => {
               if (choice === 'Apply') {
@@ -348,7 +348,7 @@ async function handleIssueAction(issue, action) {
             });
           } else {
             vscode.window.showInformationMessage(
-              `DevGuard AI: ${issue.fix}`,
+              `Codeguard AI: ${issue.fix}`,
               'Go to File'
             ).then(choice => {
               if (choice === 'Go to File') handleIssueAction(issue, 'goto');
@@ -360,7 +360,7 @@ async function handleIssueAction(issue, action) {
       } else {
         // No AI key — show the rule-based suggestion
         vscode.window.showInformationMessage(
-          `DevGuard AI: ${issue.fix}`,
+          `Codeguard AI: ${issue.fix}`,
           'Go to File'
         ).then(choice => {
           if (choice === 'Go to File') handleIssueAction(issue, 'goto');

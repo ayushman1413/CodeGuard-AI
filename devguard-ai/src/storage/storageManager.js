@@ -23,7 +23,7 @@ class StorageManager {
   /** @param {vscode.ExtensionContext} context */
   constructor(context) {
     this._context = context;
-    this._storagePath = path.join(context.globalStorageUri.fsPath, 'devguard-data');
+    this._storagePath = path.join(context.globalStorageUri.fsPath, 'codeguard-data');
     this._snapshotsDir = path.join(this._storagePath, 'snapshots');
     this._indexPath = path.join(this._storagePath, 'index.json');
     /** @type {SnapshotIndex[]} */
@@ -192,7 +192,7 @@ class StorageManager {
 
   /** Remove snapshots older than the configured retention period. */
   async _pruneOldSnapshots() {
-    const config = vscode.workspace.getConfiguration('devguardAI');
+    const config = vscode.workspace.getConfiguration('codeguardAI');
     const retentionDays = config.get('historyRetentionDays', 7);
     const cutoff = Date.now() - retentionDays * 24 * 60 * 60 * 1000;
 
